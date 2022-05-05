@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Mapbox Final Project</title>
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+
+    <!-- Customization files -->
+
+    <link href="index.css" rel="stylesheet" />
+    <!-- Be sure to set the API key and layer style in the JS file -->
+  </head>
+
+  <body>
+    <!-- This is where your map goes -->
+
+    <div id="map"></div>
+
+    <style>
+      #menuTop {
+        position: absolute;
+        background: #efefef;
+        padding: 10px;
+        padding-left: 30px;
+        padding-bottom: 10px;
+        font-family: "Open Sans", sans-serif;
+      }
+    </style>
+
+    <div id="menuTop">
+      <label class="l-radio" for="map1-negative-interaction">
+        <input
+          id="map1-negative-interaction"
+          type="radio"
+          name="rtoggle"
+          checked
+          value="negative"
+        /><span>negative interaction</span></label
+      >
+
+      <label class="l-radio" for="map2-violence-type">
+        <input
+          id="map2-violence-type"
+          type="radio"
+          name="rtoggle"
+          value="violence"
+        /><span>violence types</span></label
+      >
+
+      <label class="l-radio" for="map3">
+        <input id="map3" type="radio" name="rtoggle" value="mob" /><span
+          >mob</span
+        ></label
+      >
+
+      <label class="l-radio" for="map4-modality-conflict"
+        ><input
+          id="map4-modality-conflict"
+          type="radio"
+          name="rtoggle"
+          value="modality"
+        /><span>modality conflict</span></label
+      >
+
+      <label class="l-radio" for="map5-religiou-count-violence-type">
+        <input
+          id="map5-religiou-count-violence-type"
+          type="radio"
+          name="rtoggle"
+          value="religious"
+        /><span>religious count at violence </span></label
+      >
+
+      <label class="l-radio" for="map6-temporality">
+        <input
+          id="map6-temporality"
+          type="radio"
+          name="rtoggle"
+          value="partition"
+        />
+        <span>partition</span></label
+      >
+    </div>
+    <!-- This creates space for the legend -->
+    <div class="map-overlay" id="legend"></div>
+    <!-- INFOBOX - Comment out to delete -->
+    <div class="map-overlay" id="infobox">
+      <h3>Infobox</h3>
+      <div id="infobox_content"><p></p></div>
+    </div>
+
+    <nav id="menu"></nav>
+
+    <!-- This creates space for the slider -->
+    <div id="console">
+      <h3>Timeline for Partition Texts</h3>
+      <p>
+        Slide through the periods to see where violence occurs at different
+        periods..
+      </p>
+      <div class="session" id="sliderbar">
+        <h5>Period: <label id="active-temporality"></label></h5>
+        <input
+          id="slider"
+          class="row"
+          type="range"
+          min="1"
+          max="4"
+          step="1"
+          value="1"
+        />
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
